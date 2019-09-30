@@ -40,7 +40,7 @@ C. Bishop
 D. Beast
 Answer - Beast
 
-6. Which mutant character fires optic blasts from his eyses?
+6. Which mutant character fires optic blasts from his eyes?
 A. Cable
 B. Bishop
 C. Cyclops
