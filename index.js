@@ -23,3 +23,37 @@ function updateOptions() {
     `);
   }
 }
+
+function renderTheQuestion() {
+  let question = STORE.questions[STORE.currentQuestion];
+  updateQuestionsAndScore();
+  const questionHtml = $(`
+  <div>
+    <form id="js-questions" class="question-form">
+      
+      <fieldset>
+        <div class="container questions">
+          <div class="con-2">
+            <legend> ${question.question}</legend>
+          </div>
+        </div>
+
+        <div class="container options">
+          <div class="con-2">
+            <div class="js-options"> </div>
+        </div>
+      </div>
+    
+      <div class="container">
+        <div class="con-2">
+          <button type = "submit" id="answer" tabindex="5">Submit</button>
+          <button type = "button" id="next-question" tabindex="6"> Next >></button>
+        </div>
+      </div>
+    </fieldset>
+    </form>
+  </div>`);
+$("main").html(questionHtml);
+updateOptions();
+$("#next-question").hide();
+}
