@@ -10,7 +10,7 @@ function updateQuestionsAndScore() {
       <li id="js-answered">Questions Number: ${STORE.currentQuestion + 1}/${STORE.questions.length}</li>
       <li id="js-score">Score: ${STORE.score}/${STORE.questions.length}</li>
     </ul>`);
-  $(".question-and-score").html(html);
+  $(".questions-and-score").html(html);
 }
 
 function updateOptions() {
@@ -32,7 +32,7 @@ function renderTheQuestion() {
     <form id="js-questions" class="question-form">
       
       <fieldset>
-        <div class="container questions">
+        <div class="container question">
           <div class="con-2">
             <legend> ${question.question}</legend>
           </div>
@@ -57,3 +57,78 @@ $("main").html(questionHtml);
 updateOptions();
 $("#next-question").hide();
 }
+
+function displayResults() {
+  let resultHtml = $(
+    `<div class="results">
+      <form id="js-restart-quiz">
+        <fieldset>
+          <div class="container">
+            <div class="con-2">
+              <legend>Your Score is: ${STORE.score}/${STORE.questions.length}</legend>
+            </div>
+          </div>
+        
+          <div class="container">
+            <div class="con-2">
+              <button type="button" id="restart"> Restart Quiz </button>
+            </div>
+          </div>
+        </fieldset>
+    </form>
+    </div>`);
+    STORE.currentQuestion = 0;
+    STORE.score = 0;
+  $("main").html(resultHtml);
+}
+
+function handleQuestions() {
+  $('body').on('click','#next-question', (event) => {
+    STORE.currentQuestion === STORE.questions.length?displayResults() : renderTheQuestion();
+  });
+}
+
+function handleSelectOption() {
+  $('body').on("submit",'#js-questions', function(event) {
+    event.preventDefault();
+    let currentQues = STORE.questions[STORE.currentQuestion];
+    let selectedOption = $("input[name=options]:checked").val();
+    if (!selectedOption) {
+      alert("Choose an option");
+      return;
+    } 
+    let id_num = currentQues.options.findIndex(i => i === selectedOption);
+    let id = "#js-r" + ++id_num;
+    $('span').removeClass("right-answer wrong-answer");
+    if(selectedOption === currentQues.answer) {
+      STORE.score++; 
+      $(`${id}`).append(`OMG, you're so smart! <br/>`);
+      $(`${id}`).addClass("right-answer");
+    }
+    else {
+      $(`${id}`).append(`Tsk tsk, better try again! <br/> The answer is ${currentQues.answer}<br/>`);
+      $(`${id}`).addClass("wrong-answer");
+    }
+
+    STORE.currentQuestion++;
+    $("#js-score").text(`Score: ${STORE.score}/${STORE.questions.length}`);
+    $('#answer').hide();
+    $("input[type=radio]").attr('disabled', true);
+    $('#next-question').show();
+  });
+}
+
+function restartQuiz() {
+  $('body').on('click','#restart', (event) => {
+    renderTheQuestion();
+  });
+}
+
+function handleQuizApp() {
+  startQuiz();
+  handleQuestions();
+  handleSelectOption();
+  restartQuiz();
+}
+
+$(handleQuizApp);

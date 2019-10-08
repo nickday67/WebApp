@@ -1,7 +1,188 @@
 body {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    color: silver;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Bangers', cursive;
+    color: rgb(255, 255, 255);
     margin: 0;
     background-size: cover;
-    background-image: url("C:/Users/heroe/OneDrive/Desktop/Quiz App/Images/xmansion-dp.jpeg");
+    background-image: url("C:/Users/heroe/OneDrive/Desktop/Quiz App/WebApp/Images/xmansion-dp.jpeg");
+}
+
+header {
+    margin-top: 25px;
+    height:80px;
+    color: rgb(17, 0, 255);
+    text-shadow: 0 0 5px gold;
+    margin-bottom: 55px;
+}
+  
+.container {
+    max-width: 800px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+  
+header h1 {
+    line-height: 1;
+    top:24px;
+    font-weight: 400;
+    font-size: 50px;
+    text-align: center;
+}
+
+p {
+    display: block;
+    font-size: 26px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+  
+header .questions-and-score {
+    font-size: 34px;
+    font-weight: 300px;
+    color:rgb(17, 0, 255);
+    text-shadow: 0 0 5px gold;
+    background: none;
+}
+  
+.questions-and-score ul {
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+  
+.questions-and-score li {
+    display: inline-block;
+    padding:0 2%;
+}
+  
+button {
+    margin-top:10px;
+    height: auto;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color:black;
+    background: gold;
+    border: 0;
+    cursor: pointer;
+    margin-bottom: 0;
+    border-radius:3px;
+    padding: 10px 20px;
+}
+  
+fieldset {
+    width:50%;
+    background-color: black;
+    opacity: 0.8;
+    padding: 20px;
+    margin:0 auto;
+    border-radius: 10px;
+}
+  
+legend {
+    font-weight: 500;
+    font-size: 30px;
+}
+  
+.question-form .question {
+    margin-bottom: 20px;
+    padding: 0 2%;
+    font-size: 20px;
+    font-weight: 500px;
+}
+  
+.options ul {
+    list-style: none;
+    margin:0;
+    text-align:left;
+}
+  
+label {
+    font-size:22px;
+}
+  
+.options span {
+    display:block;
+    border-radius:5px;
+}
+  
+.right-answer {
+   background-image: url("C:/Users/heroe/OneDrive/Desktop/Quiz App/WebApp/Images/DP OMG.jpg");
+   background-size: 200px 200px;
+   background-repeat:no-repeat;
+   padding: 10px 20px;
+   margin: 5px 20px;
+   border:2px solid rgb(47, 50, 255);
+}
+  
+.wrong-answer {
+    background-image: url("C:/Users/heroe/OneDrive/Desktop/Quiz App/WebApp/Images/X-Men Symbol.png");
+    background-size: 200px 200px;
+    background-repeat:no-repeat;
+    padding: 10px;
+    margin: 5px 20px;
+    border:2px solid #fe0000;
+}
+  
+.question-form button {
+    float:left;
+}
+  
+button:hover:enabled,
+button:focus:enabled{
+    background-color: #ff0000;
+    -webkit-transition: background 0.1s;
+    -moz-transition: background 0.1s;
+    -o-transition: background 0.1s;
+    transition: background 0.1s;
+}
+  
+button:disabled {
+    opacity:0.5;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+.container {
+    max-width: 800px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+  
+.container::before,
+.container::after {
+    display: table;
+    content: '';
+}
+  
+.container::after {
+    clear: both;
+}
+  
+.con-2 {
+    float: left;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+  
+.con-2 {
+    width: 100%;
+}
+  
+@media only screen and (min-width: 400px) {
+    .con-2 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 7680px) {
+    .con-2 {
+        width: 100%;
+    }
 }
