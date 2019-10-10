@@ -41,16 +41,16 @@ function renderTheQuestion() {
         <div class="container options">
           <div class="con-2">
             <div class="js-options"> </div>
+          </div>
         </div>
-      </div>
     
-      <div class="container">
-        <div class="con-2">
-          <button type = "submit" id="answer" tabindex="5">Submit</button>
-          <button type = "button" id="next-question" tabindex="6"> Next >></button>
+        <div class="container">
+          <div class="con-2">
+            <button type = "submit" id="answer" tabindex="5">Submit</button>
+            <button type = "button" id="next-question" tabindex="6"> Next >></button>
+          </div>         
         </div>
-      </div>
-    </fieldset>
+      </fieldset>
     </form>
   </div>`);
 $("main").html(questionHtml);
@@ -96,19 +96,19 @@ function handleSelectOption() {
     if (!selectedOption) {
       alert("Choose an option");
       return;
-    } 
+    }
     let id_num = currentQues.options.findIndex(i => i === selectedOption);
-    let id = "#js-r" + ++id_num;
+    let id = "#js-r" + ++id_num;    
     $('span').removeClass("right-answer wrong-answer");
     if(selectedOption === currentQues.answer) {
-      STORE.score++; 
-      $(`${id}`).append(`OMG, you're so smart! <br/>`);
+      STORE.score++;
+      $(`${id}`).append(`OMG, you're so smart!!! <br/>`);
       $(`${id}`).addClass("right-answer");
     }
     else {
-      $(`${id}`).append(`Tsk tsk, better try again! <br/> The answer is ${currentQues.answer}<br/>`);
+      $(`${id}`).append(`Tsk tsk, better try again! <br/> The answer is: ${currentQues.answer}<br/>`);
       $(`${id}`).addClass("wrong-answer");
-    }
+    }  
 
     STORE.currentQuestion++;
     $("#js-score").text(`Score: ${STORE.score}/${STORE.questions.length}`);

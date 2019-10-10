@@ -111,20 +111,28 @@ label {
   
 .right-answer {
    background-image: url("C:/Users/heroe/OneDrive/Desktop/Quiz App/WebApp/Images/DP OMG.jpg");
+   background-position: initial;
    background-size: 200px 200px;
    background-repeat:no-repeat;
-   padding: 10px 20px;
+   padding: 50px 50px;
    margin: 5px 20px;
-   border:2px solid rgb(47, 50, 255);
+   color: red;
+   font-size: 22px;
+   text-align: center;
+   /* border:2px solid rgb(47, 50, 255); */
 }
   
 .wrong-answer {
     background-image: url("C:/Users/heroe/OneDrive/Desktop/Quiz App/WebApp/Images/X-Men Symbol.png");
-    background-size: 200px 200px;
+    background-position: initial;
+    background-size: 150px 150px;
     background-repeat:no-repeat;
-    padding: 10px;
+    padding: 50px;
     margin: 5px 20px;
-    border:2px solid #fe0000;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    /* border:2px solid #fe0000; */
 }
   
 .question-form button {
@@ -186,3 +194,13 @@ button:disabled {
         width: 100%;
     }
 }
+
+/* @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+} */
