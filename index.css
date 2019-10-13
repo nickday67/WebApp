@@ -4,7 +4,7 @@ body {
     color: rgb(255, 255, 255);
     margin: 0;
     background-size: cover;
-    background-image: url("https://fsmedia.imgix.net/59/c8/79/8d/2261/4b42/a2ce/3784b666995e/deadpool-2.jpeg?rect=0%2C512%2C2048%2C1024&auto=format%2Ccompress&dpr=2&w=650");
+    background-image: url("http://fsmedia.imgix.net/59/c8/79/8d/2261/4b42/a2ce/3784b666995e/deadpool-2.jpeg?rect=0%2C512%2C2048%2C1024&auto=format%2Ccompress&dpr=2&w=650");
 }
 
 header {
@@ -110,7 +110,7 @@ label {
 }
   
 .right-answer {
-   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDQHCZ6k6oG1LNfbK_kc2EQzUf7BQeG4D4bEqI20z715anHkd1qg");
+   background-image: url("http://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDQHCZ6k6oG1LNfbK_kc2EQzUf7BQeG4D4bEqI20z715anHkd1qg");
    background-position: initial;
    background-size: 200px 200px;
    background-repeat:no-repeat;
